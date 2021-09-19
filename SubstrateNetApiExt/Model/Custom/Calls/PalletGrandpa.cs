@@ -9,10 +9,10 @@
 
 using SubstrateNetApi.Model.Calls;
 using SubstrateNetApi.Model.Types.Base;
+using SubstrateNetApi.Model.Types.Composite;
+using SubstrateNetApi.Model.Types.Enum;
 using SubstrateNetApi.Model.Types.Primitive;
-using SubstrateNetApi.Model.Types.TypeDefArray;
-using SubstrateNetApi.Model.Types.TypeDefComposite;
-using SubstrateNetApi.Model.Types.TypeDefVariant;
+using SubstrateNetApi.Model.Types.Sequence;
 using System;
 using System.Collections.Generic;
 

@@ -8,10 +8,10 @@
 //------------------------------------------------------------------------------
 
 using SubstrateNetApi.Model.Types.Base;
+using SubstrateNetApi.Model.Types.Composite;
+using SubstrateNetApi.Model.Types.Enum;
 using SubstrateNetApi.Model.Types.Primitive;
-using SubstrateNetApi.Model.Types.TypeDefArray;
-using SubstrateNetApi.Model.Types.TypeDefComposite;
-using SubstrateNetApi.Model.Types.TypeDefVariant;
+using SubstrateNetApi.Model.Types.Sequence;
 using System;
 using System.Collections.Generic;
 
@@ -26,53 +26,53 @@ namespace SubstrateNetApi.Model.Custom.Events
     /// </summary>
     public sealed class FrameSystem
     {
-    }
-    
-    /// <summary>
-    /// >> Event: ExtrinsicSuccess
-    /// Event for the System pallet.
-    /// </summary>
-    public sealed class ExtrinsicSuccess
-    {
-    }
-    
-    /// <summary>
-    /// >> Event: ExtrinsicFailed
-    /// Event for the System pallet.
-    /// </summary>
-    public sealed class ExtrinsicFailed
-    {
-    }
-    
-    /// <summary>
-    /// >> Event: CodeUpdated
-    /// Event for the System pallet.
-    /// </summary>
-    public sealed class CodeUpdated
-    {
-    }
-    
-    /// <summary>
-    /// >> Event: NewAccount
-    /// Event for the System pallet.
-    /// </summary>
-    public sealed class NewAccount
-    {
-    }
-    
-    /// <summary>
-    /// >> Event: KilledAccount
-    /// Event for the System pallet.
-    /// </summary>
-    public sealed class KilledAccount
-    {
-    }
-    
-    /// <summary>
-    /// >> Event: Remarked
-    /// Event for the System pallet.
-    /// </summary>
-    public sealed class Remarked
-    {
+        
+        /// <summary>
+        /// >> Event: ExtrinsicSuccess
+        /// An extrinsic completed successfully. \[info\]
+        /// </summary>
+        public sealed class ExtrinsicSuccess : BaseTuple<DispatchInfo>
+        {
+        }
+        
+        /// <summary>
+        /// >> Event: ExtrinsicFailed
+        /// An extrinsic failed. \[error, info\]
+        /// </summary>
+        public sealed class ExtrinsicFailed : BaseTuple<EnumDispatchError, DispatchInfo>
+        {
+        }
+        
+        /// <summary>
+        /// >> Event: CodeUpdated
+        /// `:code` was updated.
+        /// </summary>
+        public sealed class CodeUpdated : BaseTuple
+        {
+        }
+        
+        /// <summary>
+        /// >> Event: NewAccount
+        /// A new \[account\] was created.
+        /// </summary>
+        public sealed class NewAccount : BaseTuple<AccountId32>
+        {
+        }
+        
+        /// <summary>
+        /// >> Event: KilledAccount
+        /// An \[account\] was reaped.
+        /// </summary>
+        public sealed class KilledAccount : BaseTuple<AccountId32>
+        {
+        }
+        
+        /// <summary>
+        /// >> Event: Remarked
+        /// On on-chain remark happened. \[origin, remark_hash\]
+        /// </summary>
+        public sealed class Remarked : BaseTuple<AccountId32, H256>
+        {
+        }
     }
 }
