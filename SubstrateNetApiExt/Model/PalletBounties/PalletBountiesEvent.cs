@@ -7,7 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using SubstrateNetApi.Model.SpCore;
 using SubstrateNetApi.Model.Types.Base;
+using SubstrateNetApi.Model.Types.Primitive;
 using System;
 using System.Collections.Generic;
 
@@ -17,64 +19,59 @@ namespace SubstrateNetApi.Model.PalletBounties
     
     
     /// <summary>
-    /// >> Path: pallet_bounties.RawEvent
-    /// Events for this module.
+    /// >> 81 - Variant[pallet_bounties.pallet.Event]
     /// 
+    ///			The [event](https://substrate.dev/docs/en/knowledgebase/runtime/events) emitted
+    ///			by this pallet.
+    ///			
     /// </summary>
     public sealed class PalletBountiesEvent
     {
         
         /// <summary>
-        /// >> Event: BountyProposed
-        /// New bounty proposal. \[index\]
+        /// >> BountyProposed
         /// </summary>
         public sealed class BountyProposed : BaseTuple<SubstrateNetApi.Model.Types.Primitive.U32>
         {
         }
         
         /// <summary>
-        /// >> Event: BountyRejected
-        /// A bounty proposal was rejected; funds were slashed. \[index, bond\]
+        /// >> BountyRejected
         /// </summary>
         public sealed class BountyRejected : BaseTuple<SubstrateNetApi.Model.Types.Primitive.U32, SubstrateNetApi.Model.Types.Primitive.U128>
         {
         }
         
         /// <summary>
-        /// >> Event: BountyBecameActive
-        /// A bounty proposal is funded and became active. \[index\]
+        /// >> BountyBecameActive
         /// </summary>
         public sealed class BountyBecameActive : BaseTuple<SubstrateNetApi.Model.Types.Primitive.U32>
         {
         }
         
         /// <summary>
-        /// >> Event: BountyAwarded
-        /// A bounty is awarded to a beneficiary. \[index, beneficiary\]
+        /// >> BountyAwarded
         /// </summary>
         public sealed class BountyAwarded : BaseTuple<SubstrateNetApi.Model.Types.Primitive.U32, SubstrateNetApi.Model.SpCore.AccountId32>
         {
         }
         
         /// <summary>
-        /// >> Event: BountyClaimed
-        /// A bounty is claimed by beneficiary. \[index, payout, beneficiary\]
+        /// >> BountyClaimed
         /// </summary>
         public sealed class BountyClaimed : BaseTuple<SubstrateNetApi.Model.Types.Primitive.U32, SubstrateNetApi.Model.Types.Primitive.U128, SubstrateNetApi.Model.SpCore.AccountId32>
         {
         }
         
         /// <summary>
-        /// >> Event: BountyCanceled
-        /// A bounty is cancelled. \[index\]
+        /// >> BountyCanceled
         /// </summary>
         public sealed class BountyCanceled : BaseTuple<SubstrateNetApi.Model.Types.Primitive.U32>
         {
         }
         
         /// <summary>
-        /// >> Event: BountyExtended
-        /// A bounty expiry is extended. \[index\]
+        /// >> BountyExtended
         /// </summary>
         public sealed class BountyExtended : BaseTuple<SubstrateNetApi.Model.Types.Primitive.U32>
         {

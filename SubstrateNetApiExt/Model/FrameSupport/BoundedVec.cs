@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using SubstrateNetApi.Model.PalletIdentity;
 using SubstrateNetApi.Model.Types.Base;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,17 @@ namespace SubstrateNetApi.Model.FrameSupport
     
     
     /// <summary>
-    /// >> Path: frame_support.storage.bounded_vec.BoundedVec
+    /// >> 428 - Composite[frame_support.storage.bounded_vec.BoundedVec]
     /// </summary>
     public sealed class BoundedVec : BaseType
     {
         
-        private BaseVec<SubstrateNetApi.Model.PalletProxy.ProxyDefinition> _value;
+        /// <summary>
+        /// >> value
+        /// </summary>
+        private BaseVec<BaseOpt<SubstrateNetApi.Model.PalletIdentity.RegistrarInfo>> _value;
         
-        public BaseVec<SubstrateNetApi.Model.PalletProxy.ProxyDefinition> Value
+        public BaseVec<BaseOpt<SubstrateNetApi.Model.PalletIdentity.RegistrarInfo>> Value
         {
             get
             {
@@ -51,7 +55,7 @@ namespace SubstrateNetApi.Model.FrameSupport
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new BaseVec<SubstrateNetApi.Model.PalletProxy.ProxyDefinition>();
+            Value = new BaseVec<BaseOpt<SubstrateNetApi.Model.PalletIdentity.RegistrarInfo>>();
             Value.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
